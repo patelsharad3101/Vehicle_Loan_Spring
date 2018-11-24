@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: teal;
+   
+}
+
+form{
+ width:50%;
+    margin: auto;
+
+}
+* {
+    box-sizing: border-box;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.row {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.row:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+</style>
+</head>
+
+<form method="post">
+
+  <div class="container">
+
+
+    <h3> Vehicle Details</h3>
+   <lable><i class="fa fa-taxi " aria-hidden="true"></i> Car Make:</lable>
+    <select required id="carmake">
+    <option value="Aston Martin">Aston Martin</option>
+    <option value="Datsun">Datsun</option>
+    <option value="Fiat">Fiat</option>
+    <option value="Ford">Ford</option>
+    <option value="Hindunstan Motors">Hindunstan Motors</option>
+    <option value="Honda">Honda</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Maruti">Maruti</option>
+    <option value="Renault">Renault</option>
+    <option value="Volvo">Volvo</option>
+    </select><br><br>
+
+
+<label><i class="fa fa-car" aria-hidden="true"></i> Car Model:</label>
+   <input type="text" id="carmodel" name="Car Model" placeholder="Enter Car Model" required><br><br>
+ 
+ 
+<label><i class="fa fa-university" aria-hidden="true"></i> Ex-Showroom Price:</label>
+    <input type="text" id="exshowroomprice"  name="Ex-Showroom Price" placeholder="Enter Value" required><br><br>
+
+<label><i class="fa fa-university" aria-hidden="true"></i> On Road Price</label>
+    <input type="text" id="onroadprice" name="On Road Price" placeholder="Enter Value" required><br>
+   <hr>
+
+
+<h4> Applicant Details:</h4>
+
+<label><i class="fa fa-user" aria-hidden="true"></i> Name:</label>
+   <input type="text" id="user" name="user" placeholder="Enter Full Name" required><br><br>
+
+    
+
+<label><i class="fa fa-calendar" aria-hidden="true"></i> Age</label>
+    <input type="number" id="age" name="age" placeholder="Enter your age" min="21" max="65" required><br><br>
+
+<label><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender:</label>
+    <select required id="gender">
+        <option>select category</option>
+    <option value="Male">Male</option>
+	<option value="Female">Female</option>
+<option value="others">Others</option>
+ </select>
+<br><br>
+
+
+<label><i class="fa fa-user-plus" aria-hidden="true"></i> Type Of Employment:</label>
+    <select required id="employmenttype">
+    <option>select </option>
+    <option value="Salaried">Salaried</option>
+    <option value="Self-Employed">Self-Employed</option>
+    </select><br><br>
+
+
+<label><i class="fa fa-inr fa-fw" aria-hidden="true"></i> Yearly Salary:</label>
+    <input type="text" id="yearlysalary" name="Yearly Salary" placeholder="Enter Yearly Salary" required><br><br>
+
+
+<label><i class="fa fa-user" aria-hidden="true"></i> Existing EMI</label></br>
+    <input type="text"  id="existingemi" name="Existing EMI" placeholder="Existing EMI" ><br><br>
+<hr>
+<h4>Contact Details</h4>
+<label><i class="fa fa-phone" aria-hidden="true"></i> Mobile No:</label>
+    <input type="text" id="mobile" name="Mobile No:" placeholder="Enter Mobile No:" required><br><br>
+
+<label><i class="fa fa-envelope" aria-hidden="true"></i> Email ID</label>
+    <input type="text" id="email" name="" placeholder="Enter Email ID" required><br>
+<hr>
+<!-- <h4>Identify Yourself</h4>
+ -->
+ <div>
+<button id="myBtn" class="row" >Check Eligibility</button>
+    </div>
+</form>
+
+<!-- 
+--------------------Modal Starte Here-------------------------- -->
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Get Eligibility</h2>
+    </div>
+    <div class="modal-body">
+<p> Hello: <span id = "display_user"></span> </p>
+<br>
+<hr>
+<p> Car: <span id = "display_car"></span> </p>
+<p> Applied Loan Amount: <span id = "display_exshowroomprice"></span> </p>
+<p> Employment Details: <span id = "display_employment"></span> </p>
+<p> Mobile: <span id = "display_mobile"></span> </p>
+<p> Email: <span id = "display_email"></span> </p>
+<br>
+<hr>
+<p> Eligible Loan Amount: <span id = "display_loanamount"></span> </p>
+
+    </div>
+    <div class="modal-footer">
+      <h3>Apply For the given Eligible Loan Amount</h3>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+   
+
+            var usr  = document.getElementById("user").value;
+            display_user.innerHTML= usr;
+
+            var cm  = document.getElementById("carmake").value;
+            var cmdl  = document.getElementById("carmodel").value;
+            var result= cm.concat(" ").concat(cmdl);
+            display_car.innerHTML= result;
+
+            var exp  = document.getElementById("exshowroomprice").value;
+            display_exshowroomprice.innerHTML= exp;
+
+            var etype  = document.getElementById("employmenttype").value;
+            display_employment.innerHTML= etype;
+
+            var mbl  = document.getElementById("mobile").value;
+            display_mobile.innerHTML= mbl;
+            var eml  = document.getElementById("email").value;
+            display_email.innerHTML= eml;
+
+            var ysal  = document.getElementById("yearlysalary").value;
+            var emi  = document.getElementById("existingemi").value;
+            var loanmax = ((ysal- (emi*12))*4);
+            var loan = Math.min(loanmax,exp);
+           display_loanamount.innerHTML=loan;
+
+            var db  = document.getElementById("dob").value
+            var gdr  = document.getElementById("gender").value
+    
+}
+
+</script>
+
+
+
+</body>
+</html>
